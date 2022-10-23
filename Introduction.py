@@ -1,8 +1,7 @@
-from re import T
-
-
-# print("Hello World")
-# name=input("What's your name?")
-# print("Hello",name,sep=":",end="\t")
-# print(123,12.3)
-print(type("Hello World"),type(123456),type(3.0),type(True))
+print("Hi, my name is Introduction. Nice to meet you!")
+name=input("What's your name?")
+print("Hello",name)
+hobby= input("What is your hobby_1?")
+print("That's a nice hobby,",hobby,"is my favorites hobby too")
+holiday=input("Where is your favorite holiday destination?")
+print("That's one of best place you can visit.")
