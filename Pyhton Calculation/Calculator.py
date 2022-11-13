@@ -107,10 +107,16 @@ while(True):
     #geometric volume calculator
     elif choices=="3":
         print("Press 1 for cube volume")
+        print("Press 2 for cuboid volume")
         choices2=input()
         if choices2=="1": #cube
             s=float(input("Side:"))
-            print("Volume of the cube with side:{} is {}".format(s,s*s*s))      
+            print("Volume of the cube with side:{} is {}".format(s,s*s*s)) 
+        elif choices2=="2": #cube
+            l=float(input("Length:"))
+            w=float(input("Width:"))
+            h=float(input("Height:"))
+            print("Volume of the cuboid with length:{}, width:{}, and height:{} is {}".format(l,w,h,l*w*h))        
         
     # bmi calculation
     elif choices=="4":
