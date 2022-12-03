@@ -18,3 +18,20 @@ myList.reverse()
 print(myList)
 # print(myList[2].index(False))
 
+myListNumber=[3,4,7,9,1,11,20,89,100]
+myListNumber+=[12,51,67,99]
+myListNumber.sort(reverse=True)
+print(myListNumber)
+
+myMatrixList=[[0,255,0],
+             [255,0,255],
+             [0,255,0]]
+print(myMatrixList)
+
+for i in myMatrixList:
+    for j in i:
+        print(j)
+
+for i in range(len(myMatrixList)):
+    for j in range(len(myMatrixList[i])):
+        print(myMatrixList[i][j])
