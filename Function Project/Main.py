@@ -6,4 +6,4 @@ from Function import *
 
 # print(drawRectangle())
 
-print(factorial(6))
+# print(factorial(6))
