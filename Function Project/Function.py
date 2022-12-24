@@ -11,21 +11,20 @@ from time import sleep
 #     end_fill()
 #     sleep(3)
 
-# def drawRectangle(color="maroon",length=50,width=70):
-#     speed(1)
-#     fillcolor(color)
-#     begin_fill()
-#     forward(width)
-#     right(90)
-#     forward(length)
-#     right(90)
-#     forward(width)
-#     right(90)
-#     forward(length)
-#     right(90)
-#     end_fill()
-#     sleep(5)
-#     return mul(length,width)
+def drawRectangle(color="maroon",length=50,width=70):
+    speed(0)
+    fillcolor(color)
+    begin_fill()
+    forward(width)
+    right(90)
+    forward(length)
+    right(90)
+    forward(width)
+    right(90)
+    forward(length)
+    right(90)
+    end_fill()
+    return mul(length,width)
 
 # def add(numberA,numberB):
 #     return numberA+numberB
@@ -33,8 +32,8 @@ from time import sleep
 # def sub(numberA,numberB):
 #     return numberA-numberB
 
-# def mul(numberA,numberB):
-#     return numberA*numberB
+def mul(numberA,numberB):
+    return numberA*numberB
 
 # def div(numberA,numberB):
 #     return numberA/numberB
@@ -45,22 +44,22 @@ from time import sleep
 #         result=mul(result,i)
 #     return result
 
-def funcname(*argument):
-    global varname
-    varname="something"
-    print(argument)
+# def funcname(*argument):
+#     global varname
+#     varname="something"
+#     print(argument)
     
-funcname()
-print(varname)
+# funcname()
+# print(varname)
 
-div=lambda a,b: a/b
-print(div(2,4))
+# div=lambda a,b: a/b
+# print(div(2,4))
 
-numbers=[2,6,8,10,11,4,12,7,13,17,0,3,21]
-mapnumbers=list(map(lambda num: num%2, numbers))
-# print(mapnumbers)
-oddeven=lambda num: num%2
-Listnum=[]
-for i in numbers:
-    Listnum.append(oddeven(i))
-print(Listnum)
+# numbers=[2,6,8,10,11,4,12,7,13,17,0,3,21]
+# mapnumbers=list(map(lambda num: num%2, numbers))
+# # print(mapnumbers)
+# oddeven=lambda num: num%2
+# Listnum=[]
+# for i in numbers:
+#     Listnum.append(oddeven(i))
+# print(Listnum)
