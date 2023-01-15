@@ -5,14 +5,14 @@ with open("Data.csv") as f:
     data=list(data)
     header=data[0]
     data=data[1:]
-
-    print(header.index("deaths_civilians"))
+    input=input("Name of data you want to search: ")
+    index=(header.index(input))
+    
     count=0
     for i in data:
-        if i[40]!='':
-            count+=int(i[40])
-            print(i[40])
-    print(count)
+        if i[index]!='':
+            count+=int(i[index])
+    print("The total of",input,":",count)
     # for i in data:
     #     print(i)
 
