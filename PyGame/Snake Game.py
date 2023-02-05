@@ -38,14 +38,14 @@ def showsnake(snake_size,snake_list):
         pygame.draw.rect(screen,Blue,[i[0],i[1],snake_size,snake_size])
 
 # Rendering Text
-def showtext(msg,msg_color):
+def showtext(msg,msg_color,xpos,ypos):
     message=font.render(msg,True,msg_color)
-    screen.blit(message,[x,y])
+    screen.blit(message,[xpos,ypos])
 
 # Game Controls
 while not gameover:
     for event in pygame.event.get():
-        print(event)
+        # print(event)
         if event.type==pygame.QUIT:
             gameover=True
         if event.type==pygame.KEYDOWN:
@@ -77,22 +77,28 @@ while not gameover:
     snake_head=[]
     snake_head.append(x)
     snake_head.append(y)
+    if snake_head in snake_list and len(snake_list)>4:
+        gameover=True
     snake_list.append(snake_head)
     if len(snake_list)>snake_length:
         del snake_list[0]
     showsnake(30,snake_list)
 
     #Food
-    pygame.draw.rect(screen,Green,[food_x,food_y,30,30]) 
+    pygame.draw.rect(screen,Green,[food_x,food_y,30,30])
+    showtext("Score:"+str(score),Red,0,0)
     pygame.display.update()
-    if x<=food_x+15 and x>=food_x-15 and y<=food_y+15 and y>=food_y-15 :
+    if x<=food_x+20 and x>=food_x-20 and y<=food_y+20 and y>=food_y-20:
         print("The food has been eaten")
         snake_length+=5
         food_x=random.randint(30,screenwidth-30)
         food_y=random.randint(30,screenheight-30)
+        score+=1
     game_time.tick(snake_speed)
 
-showtext("Game Over!",Red)
+    #Poisoned Food
+
+showtext("Game Over!",Red,(screenwidth/2)-90,(screenheight/2)-30)
 pygame.display.update()
 time.sleep(5)
 
