@@ -29,6 +29,8 @@ x_speed=0
 y_speed=0
 food_x=random.randint(30,screenwidth-30)
 food_y=random.randint(30,screenheight-30)
+poison_x=random.randint(30,screenwidth-30)
+poison_y=random.randint(30,screenheight-30)
 game_time=pygame.time.Clock()
 snake_speed=30
 
@@ -86,6 +88,7 @@ while not gameover:
 
     #Food
     pygame.draw.rect(screen,Green,[food_x,food_y,30,30])
+    pygame.draw.rect(screen,Red,[poison_x,poison_y,30,30])
     showtext("Score:"+str(score),Red,0,0)
     pygame.display.update()
     if x<=food_x+20 and x>=food_x-20 and y<=food_y+20 and y>=food_y-20:
@@ -93,20 +96,20 @@ while not gameover:
         snake_length+=5
         food_x=random.randint(30,screenwidth-30)
         food_y=random.randint(30,screenheight-30)
+        poison_x=random.randint(30,screenwidth-30)
+        poison_y=random.randint(30,screenheight-30)
         score+=1
-    game_time.tick(snake_speed)
-
     #Poisoned Food
-    pygame.draw.rect(screen,Red,[food_x,food_y,30,30])
-    showtext("Score:"+str(score),Red,0,0)
-    pygame.display.update()
-    if x<=food_x+20 and x>=food_x-20 and y<=food_y+20 and y>=food_y-20:
+    if x<=poison_x+20 and x>=poison_x-20 and y<=poison_y+20 and y>=poison_y-20:
         print("You have been poisoned")
-        snake_length+=5
-        food_x=random.randint(30,screenwidth-30)
-        food_y=random.randint(30,screenheight-30)
-        score+=1
-    game_time.tick(snake_speed)S
+        snake_length-=5
+        poison_x=random.randint(30,screenwidth-30)
+        poison_y=random.randint(30,screenheight-30)
+        if score==0:
+            break
+        score-=1
+
+    game_time.tick(snake_speed)
 
 showtext("Game Over!",Red,(screenwidth/2)-90,(screenheight/2)-30)
 pygame.display.update()
