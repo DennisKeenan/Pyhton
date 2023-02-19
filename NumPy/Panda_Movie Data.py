@@ -15,6 +15,7 @@ print(movie)
 screenshot=(movie[movie["Director"]=="Ridley Scott"]) #Showing Directed Movie
 print(screenshot)
 
+#Print movie between targeted years
 print(movie[((movie["Year"]>=2005) and (movie["Year"]<=2010))])
 year_subset=(movie[movie["Year"]>=2005])
 print(year_subset[year_subset["Year"]<=2010])
