@@ -5,14 +5,14 @@ import pandas as Pd
 # print(purchase_data)
 # print(purchase_data.loc[""])
 
-# stock_data=Pd.read_csv("Stock Markets.csv",index_col=0)
-# stock_data=(stock_data.tail(28))
-# print(stock_data.shape)
+stock_data=Pd.read_csv("Stock Markets.csv",index_col=0)
+stock_data=(stock_data.tail(28))
+print(stock_data.shape)
 
-# stock_data=Pd.read_csv("Stock Markets.csv",index_col=0)
-# row=(stock_data.shape[0])
-# stock_data.drop_duplicates(inplace=True,keep="last")
-# print(stock_data.shape[0]-row)
+stock_data=Pd.read_csv("Stock Markets.csv",index_col=0)
+row=(stock_data.shape[0])
+stock_data.drop_duplicates(inplace=True,keep="last")
+print(stock_data.shape[0]-row)
 
 stock_data=Pd.read_csv("Stock Markets.csv",index_col=0)
 stock_data.drop_duplicates(inplace=True,keep="first")
